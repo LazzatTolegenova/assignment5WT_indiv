@@ -1,0 +1,81 @@
+:root {
+  --blue: #6c4cff;
+  --blue-dark: #4b2ed8;
+  --text: #172338;
+  --muted: #737987;
+  --light: #f4f6ff;
+  --border: #e5e7ef;
+  --radius: 20px;
+  --shadow: 0 18px 50px rgba(30, 40, 100, .10);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--text); background: var(--light); line-height: 1.5; }
+button, input, select, textarea { font: inherit; }
+
+/* Header */
+.page-header { background: linear-gradient(135deg, #5b45ff, #8b4de8); color: #fff; padding: 36px 6%; }
+.page-header h1 { margin: 12px 0 6px; font-size: clamp(24px, 4vw, 38px); }
+.page-header p { margin: 0; opacity: .85; }
+.logo { display: inline-block; background: #fff; color: var(--blue); font-weight: 900; font-style: italic; font-size: 20px; padding: 6px 14px; border-radius: 16px; }
+
+/* Layout */
+main { max-width: 760px; margin: 32px auto; padding: 0 16px; display: grid; gap: 24px; }
+.task { background: #fff; border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
+.task h2 { margin: 0 0 12px; font-size: 22px; color: var(--blue-dark); }
+.task h3 { margin: 18px 0 6px; font-size: 16px; }
+.hint { color: var(--muted); margin-top: 0; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+/* Form controls */
+label { display: block; font-weight: 700; margin-bottom: 6px; }
+input, select, textarea { width: 100%; padding: 12px 14px; border: 2px solid var(--border); border-radius: 12px; background: #fff; }
+input:focus, select:focus, textarea:focus, button:focus-visible {
+  outline: 3px solid rgba(108, 76, 255, .35);
+  outline-offset: 2px;
+  border-color: var(--blue);
+}
+
+/* Buttons */
+.btn { border: 2px solid var(--blue); border-radius: 999px; padding: 10px 22px; font-weight: 800; cursor: pointer; transition: .2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-blue { background: var(--blue); color: #fff; }
+.btn-outline { background: #fff; color: var(--blue); }
+.btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
+/* Task 6 */
+.counter-value { font-size: 64px; font-weight: 900; text-align: center; margin: 8px 0 16px; color: var(--blue); }
+#task6 .row { justify-content: center; }
+
+/* Task 7 */
+textarea { resize: vertical; }
+.counter-line { margin: 8px 0 0; color: var(--muted); }
+.preview { background: var(--light); border-radius: 12px; padding: 14px; min-height: 52px; margin: 0 0 14px; word-break: break-word; white-space: pre-wrap; }
+.preview.empty { color: var(--muted); font-style: italic; }
+
+/* Task 8 */
+.sport-figure { margin: 18px 0 0; }
+.sport-figure img { display: block; max-width: 100%; height: auto; border-radius: 16px; }
+.sport-figure figcaption { margin-top: 8px; font-weight: 700; color: var(--muted); }
+
+/* Task 9 */
+.result { display: inline-block; min-width: 40px; padding: 4px 10px; background: var(--light); border-radius: 8px; font-weight: 700; }
+
+/* Task 10 */
+.card-row { align-items: stretch; }
+.focus-card {
+  display: flex; flex-direction: column; justify-content: center; gap: 4px;
+  width: 220px; min-height: 120px; padding: 18px;
+  border: 2px solid var(--border); border-radius: 18px;
+  background: #fff; cursor: pointer; transition: .2s;
+}
+.focus-card span { color: var(--muted); font-size: 14px; }
+/* Highlight class added by JS on mouseenter / focus */
+.focus-card.highlight { background: var(--blue); color: #fff; border-color: var(--blue-dark); transform: translateY(-4px); box-shadow: var(--shadow); }
+.focus-card.highlight span { color: rgba(255, 255, 255, .85); }
+/* Visible focus indicator (required by the task) */
+.focus-card:focus { outline: 4px solid #ffb703; outline-offset: 3px; }
+.instruction { flex: 1; min-width: 200px; align-self: center; margin: 0; font-weight: 700; }
+
+/* Footer */
+.page-footer { text-align: center; color: var(--muted); padding: 24px 0 40px; font-size: 14px; }
